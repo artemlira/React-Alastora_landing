@@ -1,14 +1,37 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import styled from 'styled-components';
+import { Navigation } from 'swiper';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
+const Slide = styled.div`
+  border: 5px solid tomato;
+  height: 100vh;
+
+`;
+
 function App() {
   return (
     <div className="App">
-      <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis, animi?</h1>
-      <p>
-        Lorem ipsum dolor sit amet consectetur,adipisicing elit.Pariatur
-        dolorem molestiae voluptatem recusandae,
-        consectetur exercitationem nesciunt totam accusamus
-        repellat! Laborum eaque adipisci eius, odio repellat
-        ipsum. Facere reprehenderit id molestiae!
-      </p>
+      <Swiper
+        direction="vertical"
+        // navigation={true}
+        slidesPerView={1}
+        speed={1500}
+        modules={[Navigation]}
+        // loop={true} // infinity
+      >
+        <Slide>
+          <SwiperSlide>
+            <Header />
+          </SwiperSlide>
+        </Slide>
+        <Slide>
+          <SwiperSlide>
+            <Footer />
+          </SwiperSlide>
+        </Slide>
+      </Swiper>
     </div>
   );
 }
